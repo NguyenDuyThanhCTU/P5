@@ -32,6 +32,9 @@ module.exports = {
         main: "#4fdbfc",
         secondary: "#0693e3",
       },
+      gridTemplateRows: {
+        30: "  grid-template-columns: 25% 50% 25%;",
+      },
     },
   },
 

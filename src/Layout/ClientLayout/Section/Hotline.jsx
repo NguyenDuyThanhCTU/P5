@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BiPhoneCall } from "react-icons/bi";
 
 function Hotline() {

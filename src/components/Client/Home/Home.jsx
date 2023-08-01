@@ -1,7 +1,12 @@
 import React from "react";
+import Section1 from "./Section/Section1";
 
 const Home = () => {
-  return <div className="bg-gray-600 h-[100vh]">Home</div>;
+  return (
+    <div>
+      <Section1 />
+    </div>
+  );
 };
 
 export default Home;

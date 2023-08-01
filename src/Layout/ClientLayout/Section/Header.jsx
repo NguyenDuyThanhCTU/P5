@@ -1,48 +1,49 @@
 import React, { useState } from "react";
 
-import { BiSearch } from "react-icons/bi";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdOutlineFormatListBulleted } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
 import { useData } from "../../../Context/DataProviders";
+import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
 
 const Header = () => {
   const [Hidden, setHidden] = useState(false);
-  const [isSelected, setSelected] = useState(0);
-  const navigate = useNavigate();
-  const HandleSelected = (idx) => {
-    if (idx === 4) {
-      window.open("tel:0933456474", "_blank");
-    }
-  };
+  const { TradeMarkData } = useData();
   return (
     <>
       {/* <--- Desktop ---> */}
-      <div className="font-LexendDeca  bg-MainColor  shadow-lg h-[83px] bg-black text-main">
-        <div className="p:hidden d:flex w-full h-full justify-center items-center ">
-          <div className="flex gap-24">
-            <div>
-              <img
-                src="https://firebasestorage.googleapis.com/v0/b/demo2512.appspot.com/o/z4523416705991_6351c6fb45a2952326e387f039a1c368.jpg?alt=media&token=e5e78444-f2ab-44cf-a88d-5964e1f96208"
-                alt="logo"
-                className="w-14"
-              />
+      <div className="font-LexendDeca  bg-MainColor  shadow-lg h-[90px] bg-white text-main">
+        <div className="p:hidden d:block w-full h-full  ">
+          <div className="flex px-20 w-full justify-between h-full">
+            <div className="flex gap-24">
+              <Link to="/">
+                <div className="cursor-pointer">
+                  <img
+                    src={TradeMarkData.websiteLogo}
+                    alt="logo"
+                    className="w-36"
+                  />
+                </div>
+              </Link>
             </div>
-            <div className="flex gap-14 items-center">
-              {HeaderItems.map((items, idx) => (
-                <Link to={items.link}>
-                  <div
-                    key={idx}
-                    className="font-bold text-[22px] hover:scale-110 duration-300"
-                    onClick={() => HandleSelected(idx)}
-                  >
-                    <span>{items.name}</span>
-                  </div>
-                </Link>
-              ))}
+            <div className="flex items-center w-[35vw] ">
+              <div className="border flex items-center justify-between w-full rounded-sm">
+                <input
+                  type="text"
+                  placeholder="Tìm kiếm sản phẩm..."
+                  className="p-2 w-full outline-none"
+                />
+                <div className="p-2 bg-blue-500 w-[100px] cursor-pointer">
+                  Tìm kiếm
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 text-[30px] cursor-pointer text-black">
+              <AiOutlineShoppingCart />
+              <AiOutlineUser />
             </div>
           </div>
         </div>

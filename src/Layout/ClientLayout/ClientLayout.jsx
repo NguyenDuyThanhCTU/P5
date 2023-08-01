@@ -7,6 +7,8 @@ import Header from "./Section/Header";
 import Hotline from "./Section/Hotline";
 import OnTop from "./Section/OnTop";
 import Copyright from "./Section/Copyright";
+import Footer from "./Section/Footer";
+import SubHeader from "./Section/SubHeader/SubHeader";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
@@ -19,14 +21,15 @@ const ClientLayout = ({ children }) => {
       </Helmet>
       <Loading />
 
-      <div>
-        <Header />
-        <div className=" ">{children}</div>
-      </div>
-      <div>
-        <OnTop />
-        <Hotline />
-      </div>
+      <Header />
+      <SubHeader />
+      <div className=" ">{children}</div>
+
+      <Footer />
+
+      <OnTop />
+      <Hotline />
+
       <Copyright />
     </>
   );

@@ -9,10 +9,13 @@ export const StateProvider = ({ children }) => {
 
   //custom
   const [isLoading, setIsLoading] = useState(false);
+  const [isSort, setIsSort] = useState("");
 
   return (
     <StateContext.Provider
       value={{
+        isSort,
+        setIsSort,
         isLoading,
         setIsLoading,
         isSelected,
