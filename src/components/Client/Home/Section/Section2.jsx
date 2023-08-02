@@ -6,6 +6,7 @@ import "swiper/css";
 import { Autoplay, FreeMode } from "swiper";
 import { BsFillBookmarkFill, BsStarFill, BsStarHalf } from "react-icons/bs";
 import { AiOutlineClockCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Section2 = ({ Data }) => {
   // 6 sáng
@@ -62,56 +63,62 @@ const Section2 = ({ Data }) => {
           >
             {Data.map((items, idx) => (
               <SwiperSlide>
-                <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
-                  <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
-                    <div>
-                      <img
-                        src={items.image}
-                        alt=""
-                        className="h-[249px] object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col items-center text-gray-600 font-semibold">
-                      <h4 className="uppercase hover:underline hover:text-blue-500">
-                        {items.name}
-                      </h4>
-                      <span className="line-through text-[14px]">
-                        {items.price} VNĐ
-                      </span>
-                      <span className="text-red-600">
-                        {items.sale.newprice} VNĐ
-                      </span>
-                    </div>
-                    <div>
-                      <div className="flex text-yellow-500 gap-1">
-                        <BsStarFill />
-                        <BsStarFill />
-                        <BsStarFill />
-                        <BsStarFill />
-                        {items.evaluate === 5 ? <BsStarFill /> : <BsStarHalf />}
+                <Link to={`/product/1`}>
+                  <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
+                    <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
+                      <div>
+                        <img
+                          src={items.image}
+                          alt=""
+                          className="h-[249px] object-cover"
+                        />
                       </div>
-                      <span className="text-gray-400 italic">
-                        Đã bán ({items.sold})
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-3">
-                      <img
-                        src="https://ntd.vieclam24h.vn/img/price-list/label-discount.png"
-                        alt="discount"
-                        className="w-[100px] h-[40px]"
-                      />
-                      <p className="absolute top-1 right-3 text-white text-[13px]">
-                        giảm {items.sale.percent} %
-                      </p>
-                    </div>
-                    <div className="absolute top-3 left-4">
-                      <BsFillBookmarkFill className="text-red-600 text-[45px] " />
-                      <p className="absolute top-1 left-[7px] text-white text-[12px]">
-                        SALE
-                      </p>
+                      <div className="flex flex-col items-center text-gray-600 font-semibold">
+                        <h4 className="uppercase hover:underline hover:text-blue-500">
+                          {items.name}
+                        </h4>
+                        <span className="line-through text-[14px]">
+                          {items.price} VNĐ
+                        </span>
+                        <span className="text-red-600">
+                          {items.sale.newprice} VNĐ
+                        </span>
+                      </div>
+                      <div>
+                        <div className="flex text-yellow-500 gap-1">
+                          <BsStarFill />
+                          <BsStarFill />
+                          <BsStarFill />
+                          <BsStarFill />
+                          {items.evaluate === 5 ? (
+                            <BsStarFill />
+                          ) : (
+                            <BsStarHalf />
+                          )}
+                        </div>
+                        <span className="text-gray-400 italic">
+                          Đã bán ({items.sold})
+                        </span>
+                      </div>
+                      <div className="absolute top-4 right-3">
+                        <img
+                          src="https://ntd.vieclam24h.vn/img/price-list/label-discount.png"
+                          alt="discount"
+                          className="w-[100px] h-[40px]"
+                        />
+                        <p className="absolute top-1 right-3 text-white text-[13px]">
+                          giảm {items.sale.percent} %
+                        </p>
+                      </div>
+                      <div className="absolute top-3 left-4">
+                        <BsFillBookmarkFill className="text-red-600 text-[45px] " />
+                        <p className="absolute top-1 left-[7px] text-white text-[12px]">
+                          SALE
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -131,56 +138,62 @@ const Section2 = ({ Data }) => {
           >
             {Data.map((items, idx) => (
               <SwiperSlide>
-                <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
-                  <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
-                    <div>
-                      <img
-                        src={items.image}
-                        alt=""
-                        className="h-[249px] object-cover"
-                      />
-                    </div>
-                    <div className="flex flex-col items-center text-gray-600 font-semibold">
-                      <h4 className="uppercase hover:underline hover:text-blue-500">
-                        {items.name}
-                      </h4>
-                      <span className="line-through text-[14px]">
-                        {items.price} VNĐ
-                      </span>
-                      <span className="text-red-600">
-                        {items.sale.newprice} VNĐ
-                      </span>
-                    </div>
-                    <div>
-                      <div className="flex text-yellow-500 gap-1">
-                        <BsStarFill />
-                        <BsStarFill />
-                        <BsStarFill />
-                        <BsStarFill />
-                        {items.evaluate === 5 ? <BsStarFill /> : <BsStarHalf />}
+                <Link to={`/product/1`}>
+                  <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
+                    <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
+                      <div>
+                        <img
+                          src={items.image}
+                          alt=""
+                          className="h-[249px] object-cover"
+                        />
                       </div>
-                      <span className="text-gray-400 italic">
-                        Đã bán ({items.sold})
-                      </span>
-                    </div>
-                    <div className="absolute top-4 right-3">
-                      <img
-                        src="https://ntd.vieclam24h.vn/img/price-list/label-discount.png"
-                        alt="discount"
-                        className="w-[100px] h-[40px]"
-                      />
-                      <p className="absolute top-1 right-3 text-white text-[13px]">
-                        giảm {items.sale.percent} %
-                      </p>
-                    </div>
-                    <div className="absolute top-3 left-4">
-                      <BsFillBookmarkFill className="text-red-600 text-[45px] " />
-                      <p className="absolute top-1 left-[7px] text-white text-[12px]">
-                        SALE
-                      </p>
+                      <div className="flex flex-col items-center text-gray-600 font-semibold">
+                        <h4 className="uppercase hover:underline hover:text-blue-500">
+                          {items.name}
+                        </h4>
+                        <span className="line-through text-[14px]">
+                          {items.price} VNĐ
+                        </span>
+                        <span className="text-red-600">
+                          {items.sale.newprice} VNĐ
+                        </span>
+                      </div>
+                      <div>
+                        <div className="flex text-yellow-500 gap-1">
+                          <BsStarFill />
+                          <BsStarFill />
+                          <BsStarFill />
+                          <BsStarFill />
+                          {items.evaluate === 5 ? (
+                            <BsStarFill />
+                          ) : (
+                            <BsStarHalf />
+                          )}
+                        </div>
+                        <span className="text-gray-400 italic">
+                          Đã bán ({items.sold})
+                        </span>
+                      </div>
+                      <div className="absolute top-4 right-3">
+                        <img
+                          src="https://ntd.vieclam24h.vn/img/price-list/label-discount.png"
+                          alt="discount"
+                          className="w-[100px] h-[40px]"
+                        />
+                        <p className="absolute top-1 right-3 text-white text-[13px]">
+                          giảm {items.sale.percent} %
+                        </p>
+                      </div>
+                      <div className="absolute top-3 left-4">
+                        <BsFillBookmarkFill className="text-red-600 text-[45px] " />
+                        <p className="absolute top-1 left-[7px] text-white text-[12px]">
+                          SALE
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

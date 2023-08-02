@@ -1,8 +1,9 @@
-// import Login from "../components/Login/Login";
-// import Admin from "../components/Admin/Admin";
-// import DefaultLayout from "../Layout/DefaultLayout";
+import Login from "../components/Login/Login";
+import Admin from "../components/Admin/Admin";
+import DefaultLayout from "../Layout/DefaultLayout";
 import Home from "../components/Client/Home/Home";
-// import AdminLayout from "../Layout/AdminLayout/AdminLayout";
+import ProductDetail from "../components/Client/ProductDetail/ProductDetail";
+import AdminLayout from "../Layout/AdminLayout/AdminLayout";
 // import Introduction from "../components/Client/Introduction/Introduction";
 // import Contact from "../components/Client/Contact/Contact";
 // import News from "../components/Client/News/News";
@@ -14,19 +15,24 @@ import Home from "../components/Client/Home/Home";
 import ClientLayout from "../Layout/ClientLayout/ClientLayout";
 
 export const AllRoutes = [
-  // {
-  //   path: "/login",
-  //   component: Login,
-  //   Layout: DefaultLayout,
-  // },
-  // {
-  //   path: "/admin",
-  //   component: Admin,
-  //   Layout: AdminLayout,
-  // },
+  {
+    path: "/login",
+    component: Login,
+    Layout: DefaultLayout,
+  },
+  {
+    path: "/admin",
+    component: Admin,
+    Layout: AdminLayout,
+  },
   {
     path: "/",
     component: Home,
+    Layout: ClientLayout,
+  },
+  {
+    path: "/product/:id",
+    component: ProductDetail,
     Layout: ClientLayout,
   },
 ];

@@ -27,7 +27,7 @@ const Section1 = () => {
                   <div className="flex flex-col items-center gap-2 py-10">
                     <div className="w-[150px] h-[150px]  rounded-full ">
                       <img
-                        src="https://lh5.googleusercontent.com/42SMOrt8aQFkLctdp6Q-pdiHHpE8Yeqk-hyj84Y-9ngPrQhZl6U2Xk3WtVoKvFl2oj8Pt1hfsFDTtMe7WTQXi7QMnu_C9n3bSJJTwMRcPG6aChS8JCPM4174lRq83dKI9PiOmS2XY6MgdFcKUQ"
+                        src={items.image}
                         alt="category"
                         className="w-full h-full rounded-full object-cover hover:scale-110 duration-300 cursor-pointer hover:border-blue-500 border-2"
                       />

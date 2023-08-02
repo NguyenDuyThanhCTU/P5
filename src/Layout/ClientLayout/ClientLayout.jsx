@@ -12,7 +12,7 @@ import SubHeader from "./Section/SubHeader/SubHeader";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
-
+  console.log(TradeMarkData.websiteIco);
   return (
     <>
       <Helmet>
@@ -26,9 +26,10 @@ const ClientLayout = ({ children }) => {
       <div className=" ">{children}</div>
 
       <Footer />
-
-      <OnTop />
-      <Hotline />
+      <div className="relative z-50">
+        <OnTop />
+        <Hotline />
+      </div>
 
       <Copyright />
     </>

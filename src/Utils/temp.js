@@ -1,81 +1,21 @@
 export const category = [
   {
-    name: "Hóa mỹ phẩm",
-    params: "hoa-my-pham",
+    name: "Ba khía",
+    params: "ba-khia",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/309902258_475942244573541_3011973477035977826_n.jpg?_nc_cat=103&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=_TOS5MLKoLsAX9bNcrE&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfBXnaE5V2Zuf75OghnjIuCBG0yWTOzM0IxckYqhaVVy1w&oe=64CEB545",
     children: [
       {
-        name: "Chăm sóc da và tóc",
+        name: "Ba khía chữ",
         params: "cham-soc-da-va-toc",
       },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
       {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
+        name: "Ba khía vàng",
+        params: "",
       },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
       {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
-      },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
-      {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
-      },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
-      {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
-      },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
-      {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
-      },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
-      {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
-      },
-    ],
-  },
-  {
-    name: "Đồ sơ sinh",
-    params: "do-so-sinh",
-    children: [
-      {
-        name: "Đồ sơ sinh cần thiết",
-        params: "do-so-sinh-can-thiet",
+        name: "Ba khía càng trắng",
+        params: "",
       },
     ],
   },
@@ -83,9 +23,10 @@ export const category = [
 
 export const Products = [
   {
-    name: "Bộ 06 khuôn cơm hình thú cho bé",
+    name: "Ba khía đỏ",
     price: "55 000",
-    image: "https://cf.shopee.vn/file/f824c1fb08e397bc1425c20f19e7ab4e",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -101,9 +42,10 @@ export const Products = [
     createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cdn.chanhtuoi.com/uploads/2021/01/may-lam-am-oidire.jpg",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -119,9 +61,29 @@ export const Products = [
     createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía đỏ",
+    price: "55 000",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
+    state: true,
+    material: "đang cập nhật",
+    color: "đang cập nhật",
+    size: "đang cập nhật",
+    ingredient: "đang cập nhật",
+    sold: 25,
+    sale: {},
+    evaluate: 5,
+    type: "",
+    typeName: "",
+    childrenType: "",
+    childrenTypeName: "",
+    createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
+  },
+  {
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cdn.chanhtuoi.com/uploads/2021/01/may-lam-am-oidire.jpg",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -137,9 +99,29 @@ export const Products = [
     createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía đỏ",
+    price: "55 000",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
+    state: true,
+    material: "đang cập nhật",
+    color: "đang cập nhật",
+    size: "đang cập nhật",
+    ingredient: "đang cập nhật",
+    sold: 25,
+    sale: {},
+    evaluate: 5,
+    type: "",
+    typeName: "",
+    childrenType: "",
+    childrenTypeName: "",
+    createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
+  },
+  {
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cdn.chanhtuoi.com/uploads/2021/01/may-lam-am-oidire.jpg",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -155,9 +137,29 @@ export const Products = [
     createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía đỏ",
+    price: "55 000",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
+    state: true,
+    material: "đang cập nhật",
+    color: "đang cập nhật",
+    size: "đang cập nhật",
+    ingredient: "đang cập nhật",
+    sold: 25,
+    sale: {},
+    evaluate: 5,
+    type: "",
+    typeName: "",
+    childrenType: "",
+    childrenTypeName: "",
+    createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
+  },
+  {
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cdn.chanhtuoi.com/uploads/2021/01/may-lam-am-oidire.jpg",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -173,9 +175,29 @@ export const Products = [
     createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía đỏ",
+    price: "55 000",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
+    state: true,
+    material: "đang cập nhật",
+    color: "đang cập nhật",
+    size: "đang cập nhật",
+    ingredient: "đang cập nhật",
+    sold: 25,
+    sale: {},
+    evaluate: 5,
+    type: "",
+    typeName: "",
+    childrenType: "",
+    childrenTypeName: "",
+    createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
+  },
+  {
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cdn.chanhtuoi.com/uploads/2021/01/may-lam-am-oidire.jpg",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -191,9 +213,29 @@ export const Products = [
     createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
   },
   {
-    name: "Máy làm ấm khăn ướt",
+    name: "Ba khía đỏ",
+    price: "55 000",
+    image:
+      "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/334090190_157816127108470_6494343208359141530_n.jpg?_nc_cat=102&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=3Dvx5phu_e8AX82ScgG&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfCU-J2VnnbGW_K9tYBwiGwpixWPIc9n-552NUrUKqVkPw&oe=64CEA1C1",
+    state: true,
+    material: "đang cập nhật",
+    color: "đang cập nhật",
+    size: "đang cập nhật",
+    ingredient: "đang cập nhật",
+    sold: 25,
+    sale: {},
+    evaluate: 5,
+    type: "",
+    typeName: "",
+    childrenType: "",
+    childrenTypeName: "",
+    createdAt: "June 30, 2023 at 3:42:52 PM UTC+7",
+  },
+  {
+    name: "Ba khía ba can",
     price: "320 000",
-    image: "https://cf.shopee.vn/file/29343eb3773f0e5b5584cd36385fe477",
+    image:
+      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
     state: true,
     material: "đang cập nhật",
     color: "đang cập nhật",
@@ -201,7 +243,7 @@ export const Products = [
     ingredient: "đang cập nhật",
     sold: 28,
     sale: { newprice: "160 000", percent: "50" },
-    evaluate: 4,
+    evaluate: 5,
     type: "",
     typeName: "",
     childrenType: "",

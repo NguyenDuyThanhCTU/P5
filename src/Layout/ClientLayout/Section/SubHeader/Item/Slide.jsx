@@ -26,7 +26,7 @@ const Slide = () => {
               <img
                 src={items.image}
                 alt="banner"
-                className="object-cover  w-full z-0"
+                className="object-cover h-[350px]  w-full z-0"
               />
             </SwiperSlide>
           </>
