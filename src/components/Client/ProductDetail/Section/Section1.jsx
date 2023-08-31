@@ -4,7 +4,7 @@ import { ProductDetailItems } from "../../../../Utils/item";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { useData } from "../../../../Context/DataProviders";
 
-const Section1 = () => {
+const Section1 = ({ Data }) => {
   const [isCombo, setIsCombo] = useState(1);
   const { ContactData } = useData();
   const onMinus = () => {
@@ -38,28 +38,28 @@ const Section1 = () => {
       <div className="flex d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2">
         <div className="border flex-1">
           <img
-            src={DataFetch.image}
+            src={Data.image}
             alt="product image"
             className="p-2 h-[820px]  w-full object-cover"
           />
         </div>
         <div className="flex-1 flex flex-col gap-5">
-          <h3 className="text-[28px] uppercase">{DataFetch.name}</h3>
+          <h3 className="text-[28px] uppercase">{Data.title}</h3>
           <div className="flex gap-1 flex-col">
-            {DataFetch.sale.lenth > 1 ? (
+            {Data.sale.discount !== 0 ? (
               <>
                 <span className="line-through text-[14px]">
-                  {DataFetch.price} VNĐ
+                  {Data.price} VNĐ/{Data.weight}
                 </span>
                 <span className="text-red-600 text-[24px">
-                  {DataFetch.sale.newprice} VNĐ
+                  {Data.sale.newPrice} VNĐ
                 </span>
               </>
             ) : (
               <>
                 {" "}
                 <span className="text-red-600 text-[24px]">
-                  {DataFetch.price} VNĐ
+                  {Data.price} VNĐ/{Data.weight}
                 </span>
               </>
             )}
@@ -69,15 +69,15 @@ const Section1 = () => {
                 <BsStarFill />
                 <BsStarFill />
                 <BsStarFill />
-                {DataFetch.evaluate === 5 ? <BsStarFill /> : <BsStarHalf />}
+                {Data.evaluate === 5 ? <BsStarFill /> : <BsStarHalf />}
               </div>
               <span className="text-gray-400 italic">
-                Đã bán ({DataFetch.sold})
+                Đã bán ({Data.access})
               </span>
             </div>
           </div>
           <div className="w-[200px] ">
-            {DataFetch.state ? (
+            {Data.state ? (
               <div className="p-3 text-green-500 border border-green-500 rounded-xl font-bold">
                 Tình trạng: Còn hàng
               </div>
@@ -95,7 +95,7 @@ const Section1 = () => {
               </strong>{" "}
               để được báo giá và tư vấn.
             </p>
-            <span>
+            {/* <span>
               <strong className="text-black font-semibold">Chất liệu:</strong>{" "}
               {DataFetch.material}
             </span>
@@ -110,7 +110,7 @@ const Section1 = () => {
             <span>
               <strong className="text-black font-semibold">Thành phần:</strong>{" "}
               {DataFetch.ingredient}.
-            </span>
+            </span> */}
           </div>
 
           <div className="border border-blue-500   h-12 rounded-sm w-[200px] ">
@@ -150,6 +150,15 @@ const Section1 = () => {
               ))}
             </div>
           </div>
+        </div>
+      </div>
+      <div>
+        <div className="px-16 py-5">
+          <h3 className="text-[24px] font-semibold ">Mô tả sản phẩm</h3>
+          <div
+            className="mt-2 flex flex-col gap-3 w-[60%] indent-5"
+            dangerouslySetInnerHTML={{ __html: Data.describe }}
+          ></div>
         </div>
       </div>
     </div>

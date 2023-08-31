@@ -63,7 +63,7 @@ const Section2 = ({ Data }) => {
           >
             {Data.map((items, idx) => (
               <SwiperSlide>
-                <Link to={`/product/1`}>
+                <Link to={`/san-pham/1`}>
                   <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
                     <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
                       <div>
@@ -138,7 +138,7 @@ const Section2 = ({ Data }) => {
           >
             {Data.map((items, idx) => (
               <SwiperSlide>
-                <Link to={`/product/1`}>
+                <Link to={`/san-pham/1`}>
                   <div className="mx-4 py-4 my-8 h-full w-auto bg-white hover:scale-110 duration-500 cursor-pointer">
                     <div className=" mx-7 py-2 border flex flex-col items-center gap-2 bg-[#f0eeee]  relative">
                       <div>

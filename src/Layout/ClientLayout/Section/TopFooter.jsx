@@ -59,7 +59,7 @@ const TopFooter = () => {
   return (
     <div>
       <div className="w-full d:h-max p:h-auto overflow-hidden py-10 ">
-        <div className="  h-full flex p:flex-col d:flex-row px-5">
+        <div className="  h-full flex p:flex-col d:flex-row px-5 ">
           <div className="flex-[60%] h-auto">
             <div className="d:px-20  p:px-2 flex flex-col gap-5 ">
               <h3 className="text-title font-bold">
@@ -106,10 +106,28 @@ const TopFooter = () => {
               </p>
             </div>
           </div>
-          <div className="flex-[40%] my-14">
+          <div className="flex-[40%] ">
             <h3 className="text-title font-bold">
               CHẤT LƯỢNG – BỀN VỮNG – ĐẠO ĐỨC – CHIA SẺ
             </h3>
+            <div className="mt-2">
+              <div className="p-2 flex">
+                <div className="w-[45%] h-full  overflow-hidden">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/bakhiadamdoi-8d789.appspot.com/o/z4649339659785_c1454760b414ece56ee40c7d1759b037.jpg?alt=media&token=7f6ee1a8-85d6-4d09-942b-a5be9de2d8f2"
+                    alt=""
+                    className="w-full h-full hover:scale-110 duration-300"
+                  />
+                </div>
+                <div className="w-[45%] h-full  overflow-hidden">
+                  <img
+                    src="https://firebasestorage.googleapis.com/v0/b/bakhiadamdoi-8d789.appspot.com/o/z4649339659944_004fc134962c3edafba1ddd2fdd70bca.jpg?alt=media&token=031d505f-28b9-4a7b-84e2-531df9ed594b"
+                    alt=""
+                    className="w-full h-full hover:scale-110 duration-300"
+                  />
+                </div>
+              </div>
+            </div>
             <div className="mt-4 bg-gradient-to-t to-green-300 text-white from-green-600">
               <div className="p-4 grid grid-cols-2 gap-5 ">
                 {SloganItems.map((items, idx) => (

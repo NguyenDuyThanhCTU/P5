@@ -27,7 +27,7 @@ function OnTop() {
           className="fixed bottom-7 left-2 e py-2 px-4 "
           onClick={handleScrollToTop}
         >
-          <BsFillArrowUpSquareFill className="text-blue-500 text-4xl bg-white rounded-full" />
+          <BsFillArrowUpSquareFill className="text-blue-500  text-4xl bg-white rounded-full" />
         </button>
       )}
     </>

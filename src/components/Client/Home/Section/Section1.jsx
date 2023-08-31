@@ -4,9 +4,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import { Autoplay } from "swiper";
-import { category } from "../../../../Utils/temp";
+import { useData } from "../../../../Context/DataProviders";
 
 const Section1 = () => {
+  const { productTypes } = useData();
   return (
     <div className="d:px-80 p:px-2 d:py-0 p:py-10">
       <div className="d:block p:hidden">
@@ -21,7 +22,7 @@ const Section1 = () => {
           className="mySwiper"
         >
           <div>
-            {category.map((items, idx) => (
+            {productTypes.map((items, idx) => (
               <>
                 <SwiperSlide>
                   <div className="flex flex-col items-center gap-2 py-10">
@@ -54,7 +55,7 @@ const Section1 = () => {
           className="mySwiper"
         >
           <div>
-            {category.map((items, idx) => (
+            {productTypes.map((items, idx) => (
               <>
                 <SwiperSlide>
                   <div className="flex flex-col items-center gap-2 py-10">

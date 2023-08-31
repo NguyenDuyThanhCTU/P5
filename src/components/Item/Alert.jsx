@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsCheck2Circle } from "react-icons/bs";
 
 const Alert = ({ correct, uncorrect }) => {

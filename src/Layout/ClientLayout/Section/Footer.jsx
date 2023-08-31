@@ -1,9 +1,58 @@
-import { Input } from "antd";
-import React from "react";
+import { Input, notification } from "antd";
+import React, { useState } from "react";
 import { useData } from "../../../Context/DataProviders";
 
 const Footer = () => {
   const { TradeMarkData, ContactData, SocialMedia } = useData();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [content, setContent] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!name || !email || !phone || !content) {
+      notification["warning"]({
+        message: "Thao tác KHÔNG thành công !",
+        description: `
+           Vui lòng nhập đầy đủ THÔNG TIN !`,
+      });
+    } else {
+      let data = {
+        Tên: name,
+        Email: email,
+        ĐiệnThoại: phone,
+        ÝKiến: content,
+      };
+
+      const response = await fetch(
+        "https://formsubmit.co/ajax/thanhnd2512@gmail.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (response.ok) {
+        notification["success"]({
+          message: "Thành công !",
+          description: `
+             Chúng tôi sẽ liên hệ trong thời gian sớm nhất !`,
+        });
+      } else {
+        notification["error"]({
+          message: "Lỗi !",
+          description: `
+             Lỗi không xác định !`,
+        });
+      }
+    }
+  };
+
   return (
     <div className="font-LexendDeca">
       <div className="grid d:grid-cols-3 p:p-10  d:p-16 gap-10 p:grid-cols-1">
@@ -11,22 +60,39 @@ const Footer = () => {
           <h3 className="uppercase font-bold text-red-500 text-[18px]">
             ĐĂNG KÍ NHẬN THÔNG TIN ƯU ĐÃI VÀ XU HƯỚNG MỚI NHẤT
           </h3>
-          <div className="flex flex-col gap-2 mt-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-4">
             <div className="flex flex-col gap-3 mb-5 ">
-              <Input placeholder="Họ Tên(*)" />
-              <Input placeholder="Email(*)" />
-              <Input placeholder="Điện thoại(*)" />
+              <input
+                className="outline-none border rounded-md p-2 w-full"
+                placeholder="Họ Tên(*)"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <input
+                className="outline-none border rounded-md p-2 w-full"
+                placeholder="Email(*)"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                className="outline-none border rounded-md p-2 w-full"
+                placeholder="Điện thoại(*)"
+                onChange={(e) => setPhone(e.target.value)}
+              />
+
               <textarea
                 placeholder="Ý kiến khách hàng"
                 className="outline-none border rounded-md p-2 w-full"
+                onChange={(e) => setContent(e.target.value)}
               />
             </div>
             <div>
-              <span className="uppercase py-2 px-6 bg-blue-600 text-white">
+              <button
+                type="submit"
+                className="uppercase py-2 px-6 bg-blue-600 text-white"
+              >
                 gửi đi
-              </span>
+              </button>
             </div>
-          </div>
+          </form>
         </div>
         <div>
           <h3 className="uppercase font-bold text-red-500 text-[25px]">

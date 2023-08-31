@@ -10,10 +10,13 @@ export const StateProvider = ({ children }) => {
   //custom
   const [isLoading, setIsLoading] = useState(false);
   const [OpenCart, setOpenCart] = useState(false);
+  const [searchKey, setSearchKey] = useState("");
 
   return (
     <StateContext.Provider
       value={{
+        setSearchKey,
+        searchKey,
         isLoading,
         OpenCart,
         setOpenCart,

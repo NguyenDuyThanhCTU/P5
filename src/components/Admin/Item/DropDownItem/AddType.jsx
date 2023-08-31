@@ -20,8 +20,8 @@ import { uploadImage } from "../Handle";
 const AddType = () => {
   const [Name, setName] = useState("");
   const [Params, setIsParams] = useState("");
-  const [Parent, setParent] = useState("Cửa hàng");
-  const [ParentParams, setParentParams] = useState("cua-hang");
+  const [Parent, setParent] = useState("Ba Khía");
+  const [ParentParams, setParentParams] = useState("ba-khia");
 
   const [imageUrl, setImageUrl] = useState("");
   const [isSelected, setSelected] = useState(false);
@@ -30,8 +30,6 @@ const AddType = () => {
 
   const handleDiscard = () => {
     setName("");
-    setIsParams("");
-    setParent("Cửa hàng");
     setImageUrl("");
   };
 

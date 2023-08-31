@@ -15,12 +15,17 @@ const Fetch = () => {
     setContactData,
     setTradeMarkData,
     setAccounts,
-    setPostOther,
-    setPostCompany,
+
     //Service
     setProductType,
     setProducts,
     setOrders,
+    setBranches,
+    setVideos,
+    setPosts,
+
+    //custom
+    setColor,
   } = useData();
 
   const { isRefetch, setIsRefetch } = useStateProvider();
@@ -52,16 +57,14 @@ const Fetch = () => {
     });
 
     getProducts("posts").then((data) => {
-      const otherItems = data.reverse().filter((item) => item.type === "Other");
-      setPostOther(otherItems);
-
-      const companyItems = data.filter((item) => item.type == "Company");
-
-      setPostCompany(companyItems);
+      setPosts(data.reverse());
     });
 
     getProducts("productTypes").then((data) => {
-      setProductType(data.reverse());
+      setProductType(data);
+    });
+    getProducts("colors").then((data) => {
+      setColor(data);
     });
 
     getProducts("products").then((data) => {
@@ -69,6 +72,12 @@ const Fetch = () => {
     });
     getProducts("orders").then((data) => {
       setOrders(data.reverse());
+    });
+    getProducts("branches").then((data) => {
+      setBranches(data.reverse());
+    });
+    getProducts("videos").then((data) => {
+      setVideos(data.reverse());
     });
   }, [isRefetch]);
   return <></>;

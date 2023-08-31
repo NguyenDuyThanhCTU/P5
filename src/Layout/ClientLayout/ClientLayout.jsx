@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useData } from "../../Context/DataProviders";
 import { Helmet } from "react-helmet";
@@ -10,10 +10,17 @@ import Copyright from "./Section/Copyright";
 import Footer from "./Section/Footer";
 import SubHeader from "./Section/SubHeader/SubHeader";
 import TopFooter from "./Section/TopFooter";
+import { useLocation } from "react-router-dom";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
   console.log(TradeMarkData.websiteIco);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
   return (
     <>
       <Helmet>
@@ -21,12 +28,24 @@ const ClientLayout = ({ children }) => {
         <link rel="icon" href={TradeMarkData.websiteIco} />
       </Helmet>
       <Loading />
+      {location.pathname === "/thanh-toan" ? (
+        <>
+          <Header />
 
-      <Header />
-      <SubHeader />
-      <div className=" ">{children}</div>
-      <TopFooter />
-      <Footer />
+          <div className=" ">{children}</div>
+
+          <Footer />
+        </>
+      ) : (
+        <>
+          <Header />
+          <SubHeader />
+          <div className=" ">{children}</div>
+          <TopFooter />
+          <Footer />
+        </>
+      )}
+
       <div className="relative z-50">
         <OnTop />
         <Hotline />

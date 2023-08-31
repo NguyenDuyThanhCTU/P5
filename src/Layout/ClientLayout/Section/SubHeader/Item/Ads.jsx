@@ -4,12 +4,12 @@ const Ads = () => {
   return (
     <div className="grid grid-cols-2 gap-2">
       <img
-        src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/361924049_689283289906101_4209092101061916120_n.jpg?_nc_cat=104&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=YNL_V7OJ_z0AX-S_7-c&_nc_ht=scontent.fsgn2-5.fna&oh=00_AfCCYAFfHdZZFO3GAslMylXa2x_a_FOQUI0oNMvWzNUIYg&oe=64CE2340"
+        src="https://firebasestorage.googleapis.com/v0/b/bakhiadamdoi-8d789.appspot.com/o/369800865_708169124684184_1260546714188444409_n.jpg?alt=media&token=3f95c668-85cd-4f82-aa65-d4f6e13beec4"
         alt="advertisement"
         className="h-[260px] object-cover"
       />
       <img
-        src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/364205691_689283306572766_6834958889149966884_n.jpg?_nc_cat=111&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=0FIL_53PQEoAX8z-S3T&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfC7N2sXSViBANB1aBHc7POW0BpKmIhqhxq7GbpwYphfng&oe=64CF7986"
+        src="https://firebasestorage.googleapis.com/v0/b/bakhiadamdoi-8d789.appspot.com/o/368460954_708169011350862_901181994892373310_n.jpg?alt=media&token=39aef40c-86dc-40ca-a8f5-c227f061afcf"
         alt="advertisement"
         className="h-[260px] object-cover"
       />

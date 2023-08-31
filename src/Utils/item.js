@@ -116,7 +116,7 @@ export const SocialMediaDashboard = [
     icon: "SiZalo",
     image:
       "https://atpsoftware.vn/wp-content/uploads//2020/03/20211208103735_id_zalo-1.jpg",
-    style: "hover:text-blue-400 hover:bg-white w-10",
+    style: "hover:text-blue-400 hover:bg-white",
   },
   {
     title: "Facebook cá nhân",
@@ -176,7 +176,7 @@ export const SocialMediaCustom = [
     icon: "SiZalo",
     image:
       "https://atpsoftware.vn/wp-content/uploads//2020/03/20211208103735_id_zalo-1.jpg",
-    style: "hover:text-blue-600 hover:bg-white w-10",
+    style: "hover:text-blue-600 hover:bg-white ",
   },
   {
     id: 1,
@@ -268,30 +268,44 @@ export const OrderDashboardItems = [
 
 export const HeaderItems = [
   {
-    name: "Trang chủ",
-    link: "/",
-  },
-  {
     name: "Giới thiệu",
-    link: "/gioi-thieu",
+    link: "gioi-thieu",
   },
   {
-    name: "Thuê xe",
-    link: "/thue-xe",
+    name: "Cửa hàng",
+    link: "cua-hang",
   },
   {
-    name: "Đặt xe trực tuyến",
-    link: "",
+    name: "Dịch vụ",
+    link: "dich-vu",
   },
   {
-    name: "Gọi xe 0933456474",
-    link: "",
+    name: "Album Ảnh",
+    link: "album-anh",
+    params: "album-anh/tat-ca",
+  },
+  {
+    name: "Tin làm đẹp",
+    link: "tin-lam-dep",
+  },
+  {
+    name: "Video",
+    link: "video",
+  },
+  {
+    name: "Liên Hệ",
+    link: "lien-he",
   },
 ];
+
 export const TypeProductItems = [
   {
-    name: "Danh mục sản phẩm",
-    params: "danh-muc-san-pham",
+    name: "Ba Khía",
+    params: "ba-khia",
+  },
+  {
+    name: "Khác",
+    params: "khac",
   },
 ];
 //Custom

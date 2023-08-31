@@ -78,7 +78,7 @@ const ListProducts = ({ name }) => {
                             <SwiperSlide>
                               <img
                                 key={items.id}
-                                src={items.image[0]}
+                                src={items.image}
                                 alt="banner"
                                 className="h-[200px] w-full object-contain p-4"
                               />
@@ -153,7 +153,7 @@ const ListProducts = ({ name }) => {
                       </div>
 
                       <img
-                        src={data.image[0]}
+                        src={data.image}
                         alt="product"
                         className="w-14 h-14 rounded-lg object-cover"
                       />
