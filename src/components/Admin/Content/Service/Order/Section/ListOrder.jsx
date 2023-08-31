@@ -7,7 +7,7 @@ import { delDocument } from "../../../../../../Config/Services/Firebase/FireStor
 import { useStateProvider } from "../../../../../../Context/StateProvider";
 import { useData } from "../../../../../../Context/DataProviders";
 import { SlOptions } from "react-icons/sl";
-import DropDown from "../../../../Item/DropDown";
+import DropDown from "../../../../Item/AdminDropDown";
 import { IconMapping, OrderDashboardItems } from "../../../../../../Utils/item";
 
 const ListOrder = () => {
@@ -21,14 +21,14 @@ const ListOrder = () => {
           <p>STT</p>
           <p>Tên KH</p>
           <p>SĐT KH</p>
-          <p>Loại xe</p>
-          <p>Ảnh xe</p>
-          <p>Loại Pin</p>
+          <p>Email</p>
+          <p>Địa</p>
+
           <p>Giá</p>
           <p>Thời gian</p>
           <p className="w-[100px]">Trạng thái</p>
         </div>
-        {orders.map((data, idx) => {
+        {/* {orders.map((data, idx) => {
           let Icon = IconMapping[data.state];
 
           return (
@@ -90,7 +90,7 @@ const ListOrder = () => {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

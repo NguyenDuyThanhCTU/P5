@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import TextEditor from "../../../../Item/TextEditor";
 
 const Introduce = () => {
-  return <div>Introduce</div>;
+  const [editorData, setEditorData] = useState("");
+  console.log(editorData);
+  return (
+    <div className=" gap-5 w-full">
+      <div className="text-black">
+        {" "}
+        <TextEditor editorData={editorData} setEditorData={setEditorData} />
+      </div>
+    </div>
+  );
 };
 
 export default Introduce;

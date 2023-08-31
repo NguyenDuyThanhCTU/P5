@@ -131,10 +131,21 @@
 
 
 
+.text-title{
+  color: #333333;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  font-family: Montserrat, sans-serif;
+}
 
-.text-title {}
+.text-content{
+  color: #666666;
+line-height: 26px;
+font-family: Nunito Sans, sans-serif;
+font-size: 16px;
 
-.text-content {}
+}
 
 
 .swiper {

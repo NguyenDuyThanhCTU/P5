@@ -9,6 +9,7 @@ import OnTop from "./Section/OnTop";
 import Copyright from "./Section/Copyright";
 import Footer from "./Section/Footer";
 import SubHeader from "./Section/SubHeader/SubHeader";
+import TopFooter from "./Section/TopFooter";
 
 const ClientLayout = ({ children }) => {
   const { TradeMarkData } = useData();
@@ -24,7 +25,7 @@ const ClientLayout = ({ children }) => {
       <Header />
       <SubHeader />
       <div className=" ">{children}</div>
-
+      <TopFooter />
       <Footer />
       <div className="relative z-50">
         <OnTop />

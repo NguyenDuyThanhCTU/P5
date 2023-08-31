@@ -19,7 +19,7 @@ export const addDocument = async (Collection, data) => {
   try {
     const newDocument = await addDoc(collection(db, Collection), data);
 
-    console.log("Document written with ID: ", newDocument.id);
+    return newDocument.id;
   } catch (error) {
     console.error("Error adding document: ", error);
   }
@@ -190,5 +190,96 @@ export const delDocument = async (CollectionName, id) => {
     await deleteDoc(doc(db, CollectionName, id));
   } catch (error) {
     console.log(error);
+  }
+};
+
+// CRUD with array Field
+
+export const addDataToArrayField = async (
+  collectionName,
+  documentId,
+  fieldName,
+  newData
+) => {
+  try {
+    const ref = doc(db, collectionName, documentId);
+    const snapshot = await getDoc(ref);
+
+    if (snapshot.exists()) {
+      const documentData = snapshot.data();
+      const arrayField = documentData[fieldName] || [];
+      arrayField.push(newData);
+
+      await updateDoc(ref, { [fieldName]: arrayField });
+
+      console.log(`Thêm dữ liệu vào trường ${fieldName} thành công!`);
+    } else {
+      console.error("Không tìm thấy tài liệu!");
+    }
+  } catch (error) {
+    console.error(`Lỗi khi thêm dữ liệu vào trường ${fieldName}:`, error);
+  }
+};
+
+export const updateDataInArrayField = async (
+  collectionName,
+  documentId,
+  fieldName,
+  dataIndex,
+  updatedData
+) => {
+  try {
+    const ref = doc(db, collectionName, documentId);
+    const snapshot = await getDoc(ref);
+
+    if (snapshot.exists()) {
+      const documentData = snapshot.data();
+      const arrayField = documentData[fieldName] || [];
+
+      if (dataIndex >= 0 && dataIndex < arrayField.length) {
+        arrayField[dataIndex] = updatedData;
+
+        await updateDoc(ref, { [fieldName]: arrayField });
+
+        console.log(`Cập nhật dữ liệu trong trường ${fieldName} thành công!`);
+      } else {
+        console.error("Số thứ tự dữ liệu không hợp lệ!");
+      }
+    } else {
+      console.error("Không tìm thấy tài liệu!");
+    }
+  } catch (error) {
+    console.error(`Lỗi khi cập nhật dữ liệu trong trường ${fieldName}:`, error);
+  }
+};
+
+export const deleteDataFromArrayField = async (
+  collectionName,
+  documentId,
+  fieldName,
+  dataIndex
+) => {
+  try {
+    const ref = doc(db, collectionName, documentId);
+    const snapshot = await getDoc(ref);
+
+    if (snapshot.exists()) {
+      const documentData = snapshot.data();
+      const arrayField = documentData[fieldName] || [];
+
+      if (dataIndex >= 0 && dataIndex < arrayField.length) {
+        arrayField.splice(dataIndex, 1);
+
+        await updateDoc(ref, { [fieldName]: arrayField });
+
+        console.log(`Xóa dữ liệu khỏi trường ${fieldName} thành công!`);
+      } else {
+        console.error("Số thứ tự dữ liệu không hợp lệ!");
+      }
+    } else {
+      console.error("Không tìm thấy tài liệu!");
+    }
+  } catch (error) {
+    console.error(`Lỗi khi xóa dữ liệu khỏi trường ${fieldName}:`, error);
   }
 };
