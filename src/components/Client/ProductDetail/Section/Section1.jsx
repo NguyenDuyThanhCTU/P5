@@ -30,11 +30,11 @@ const Section1 = ({ Data }) => {
   return (
     <div>
       <div className="flex d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2 py-14">
-        <div className="border-2 flex-1 border-blue-400 rounded-lg">
+        <div className="border-2 flex-1 border-blue-400 rounded-lg d:h-[820px] p:h-auto overflow-hidden">
           <img
             src={Data.image}
             alt="product image"
-            className="p-2 h-[820px]  w-full object-cover"
+            className="p-2 h-full w-full object-cover hover:scale-110 duration-500"
           />
         </div>
         <div className="flex-1 flex flex-col gap-5">
@@ -153,10 +153,10 @@ const Section1 = ({ Data }) => {
         </div>
       </div>
       <div>
-        <div className="px-16 py-5">
+        <div className="d:px-16 py-5 p:px-2">
           <h3 className="text-[24px] font-semibold ">Mô tả sản phẩm</h3>
           <div
-            className="mt-2 flex flex-col gap-3 w-[60%] indent-5"
+            className="mt-2 flex flex-col gap-3 p:w-auto d:w-[60%] indent-5"
             dangerouslySetInnerHTML={{ __html: Data.describe }}
           ></div>
         </div>

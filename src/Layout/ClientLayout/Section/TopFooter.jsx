@@ -59,7 +59,7 @@ const TopFooter = () => {
   return (
     <div>
       <div className="w-full d:h-max p:h-auto overflow-hidden py-10 ">
-        <div className="  h-full flex p:flex-col d:flex-row px-5 ">
+        <div className="  h-full flex p:flex-col d:flex-row px-5 gap-3 ">
           <div className="flex-[60%] h-auto">
             <div className="d:px-20  p:px-2 flex flex-col gap-5 ">
               <h3 className="text-title font-bold">
@@ -129,7 +129,7 @@ const TopFooter = () => {
               </div>
             </div>
             <div className="mt-4 bg-gradient-to-t to-blue-300 text-white from-blue-600">
-              <div className="p-4 grid grid-cols-2 gap-5 ">
+              <div className="p-4 grid p:grid-cols-1 d:grid-cols-2 gap-5 ">
                 {SloganItems.map((items, idx) => (
                   <>
                     <div className="font-LexendDeca">

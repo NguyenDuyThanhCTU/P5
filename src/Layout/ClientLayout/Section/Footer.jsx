@@ -58,7 +58,7 @@ const Footer = () => {
     <div className="font-LexendDeca bg-gradient-to-tr from-blue-400 to-blue-500 text-white">
       <div className="grid d:grid-cols-3 p:p-10  d:p-16 gap-10 p:grid-cols-1">
         <div>
-          <h3 className="uppercase font-bold text-black text-[18px]">
+          <h3 className="uppercase font-bold text-red-600 underline text-[18px]">
             ĐĂNG KÍ NHẬN THÔNG TIN ƯU ĐÃI VÀ XU HƯỚNG MỚI NHẤT
           </h3>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-4">
@@ -96,7 +96,7 @@ const Footer = () => {
           </form>
         </div>
         <div>
-          <h3 className="uppercase font-bold text-black text-[25px]">
+          <h3 className="uppercase font-bold text-red-600 underline text-[25px]">
             Thông tin liên hệ
           </h3>
           <div className="flex flex-col gap-2 mt-2">
@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h3 className="uppercase font-bold text-black text-[25px]">
+          <h3 className="uppercase font-bold text-red-600 underline text-[25px]">
             Quy định và chính sách
           </h3>
           <div className="flex flex-col gap-2 mt-2">

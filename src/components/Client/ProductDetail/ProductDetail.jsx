@@ -9,7 +9,7 @@ import { useStateProvider } from "../../../Context/StateProvider";
 const ProductDetail = () => {
   const [similarProduct, setSimilarProduct] = useState([]);
   const [Sort, setSort] = useState();
-  const { Products, setCartItems } = useData();
+  const { Products } = useData();
   const { id } = useParams();
   const { OpenCart } = useStateProvider();
 

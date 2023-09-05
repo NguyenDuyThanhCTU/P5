@@ -259,30 +259,23 @@ export const OrderDashboardItems = [
 
 export const HeaderItems = [
   {
-    name: "Giới thiệu",
-    link: "gioi-thieu",
+    name: "Trang chủ",
+    link: "",
   },
   {
-    name: "Cửa hàng",
-    link: "cua-hang",
-  },
-  {
-    name: "Dịch vụ",
-    link: "dich-vu",
-  },
-  {
-    name: "Album Ảnh",
-    link: "album-anh",
-    params: "album-anh/tat-ca",
-  },
-  {
-    name: "Tin làm đẹp",
-    link: "tin-lam-dep",
+    name: "Sản Phẩm",
+    link: "san-pham",
   },
   {
     name: "Video",
     link: "video",
   },
+
+  {
+    name: "Tin tức",
+    link: "tin-tuc",
+  },
+
   {
     name: "Liên Hệ",
     link: "lien-he",

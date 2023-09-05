@@ -41,9 +41,7 @@ const ClientLayout = ({ children }) => {
           <div className="relative z-50">
             <Header />
           </div>
-          <div className="relative z-0">
-            <SubHeader />
-          </div>
+
           <div className=" ">{children}</div>
           <TopFooter />
           <Footer />

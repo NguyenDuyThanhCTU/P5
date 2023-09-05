@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HeaderItems } from "../../../Utils/item";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { MdOutlineFormatListBulleted } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 import { useData } from "../../../Context/DataProviders";
@@ -21,7 +22,7 @@ const Header = () => {
   const [isOpenSubMenu, setIsOpenSubMenu] = useState(0);
   const targetPosition = 1;
   const { TradeMarkData, productTypes, CartItems } = useData();
-  const { setOpenCart, OpenCart } = useStateProvider();
+  const { setOpenCart, OpenCart, setSearchKey } = useStateProvider();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,14 +60,14 @@ const Header = () => {
         <div className="  h-full relative  bg-white ">
           <div className=" w-full    text-[#1b365d] h-[92px] z-50 p:hidden d:flex justify-center">
             <div className="flex justify-between first-letter: items-center w-[1100px] ">
-              <div className="flex items-center gap-10">
-                <Link to="/">
+              <div className="flex items-center gap-5">
+                <RouterLink to="/">
                   <img
                     src={TradeMarkData.websiteLogo}
                     alt="img"
                     className="w-[130px]"
                   />
-                </Link>
+                </RouterLink>
                 <div className=" text-[#2d94c4]">
                   <div className="flex items-center flex-col">
                     <h3 className="uppercase text-[22px] font-bold">
@@ -86,13 +87,19 @@ const Header = () => {
                     onChange={(e) => setSearch(e.target.value)}
                     className="p-2 px-4 outline-none rounded-full bg-white border-mainpink border w-[300px]"
                   />
-                  <Link to={`/cua-hang/tim-kiem/${Search}`}>
+                  <ScrollLink
+                    to="product"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    onClick={() => setSearchKey(Search)}
+                  >
                     <FiSearch
                       className={`${
                         Search && "-right-10 bg-[#F67D08] text-white"
                       } group-hover:bg-[#F67D08] group-hover:text-white inline-block bg-white w-[36px] h-[36px] p-2 font-bold rounded-full text-[#F67D08] absolute right-[4px] bottom-[3px] group-hover:-right-10  duration-300 hover:scale-110`}
                     />
-                  </Link>
+                  </ScrollLink>
                   <div
                     className={`${
                       Search ? "-top-3 left-5  " : "top-2 left-4"
@@ -119,13 +126,13 @@ const Header = () => {
 
           <div className="p:block d:hidden w-full  ">
             <div className="flex justify-between  items-center ">
-              <Link to="/">
+              <RouterLink to="/">
                 <img
                   src={TradeMarkData.websiteLogo}
                   alt="logo"
                   className="h-[50px] m-5 "
                 />
-              </Link>
+              </RouterLink>
               <div className="flex items-center text-[60px]">
                 {Hidden ? (
                   <RxCross1
@@ -179,7 +186,7 @@ const Header = () => {
 
                 return (
                   <div className="relative" key={idx}>
-                    <Link
+                    <RouterLink
                       to={`${
                         items.params ? `/${items.params}` : `/${items.link}`
                       }`}
@@ -219,7 +226,7 @@ const Header = () => {
                                       className="py-4 px-8 font-light text-black group duration-300 hover:text-white hover:bg-mainpink flex justify-between items-center w-full"
                                       onClick={() => HandleOpenSubMenu(idx + 1)}
                                     >
-                                      <Link
+                                      <RouterLink
                                         to={`${
                                           items.parent === "album-anh"
                                             ? `/album-anh/${items.params}`
@@ -227,7 +234,7 @@ const Header = () => {
                                         }`}
                                       >
                                         <span>{items.name}</span>
-                                      </Link>
+                                      </RouterLink>
                                       {items.children.length > 0 && (
                                         <AiFillCaretRight
                                           className={`${
@@ -247,13 +254,13 @@ const Header = () => {
                                       {items.children.length > 0 && (
                                         <>
                                           {items.children.map((items) => (
-                                            <Link
+                                            <RouterLink
                                               to={`/loai-san-pham/${items.params}`}
                                             >
                                               <div className="py-4 px-8 pl-14 font-light duration-300 text-mainblue hover:text-white hover:bg-mainblue cursor-pointer">
                                                 {items.name}
                                               </div>
-                                            </Link>
+                                            </RouterLink>
                                           ))}
                                         </>
                                       )}
@@ -266,7 +273,7 @@ const Header = () => {
                         )}
                         {/*  */}
                       </div>
-                    </Link>
+                    </RouterLink>
                     <div
                       className={` ${
                         isSelected === idx

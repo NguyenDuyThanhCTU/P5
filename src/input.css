@@ -8,6 +8,13 @@
 
 
 
+.truncate1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .truncate2 {
   display: -webkit-box;
@@ -132,7 +139,7 @@
 
 
 .text-title{
-  color: #333333;
+  color: #0e50cc;
   font-size: 24px;
   font-weight: 300;
   line-height: 29px;
@@ -140,7 +147,7 @@
 }
 
 .text-content{
-  color: #0e50cc;
+  color: #333333;
 line-height: 26px;
 font-family: Nunito Sans, sans-serif;
 font-size: 16px;
