@@ -33,7 +33,7 @@ const ProductDetail = () => {
       <Display
         Data={similarProduct}
         title="Sản phẩm cùng loại"
-        background="bg-[url(https://png.pngtree.com/background/20210710/original/pngtree-cartoon-kid-meadow-green-background-material-picture-image_1023073.jpg)]"
+        background="bg-[url(https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/img%2Fvecteezy_background-gradient-blue-abstract-design-vector-illustration_16513887.jpg?alt=media&token=0e41ca8a-89cb-4099-913a-ce8e0168324b)]"
       />
       <div
         className={`fixed bottom-36 right-[-300px] ${

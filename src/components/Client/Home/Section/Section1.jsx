@@ -33,7 +33,7 @@ const Section1 = () => {
                         className="w-full h-full rounded-full object-cover hover:scale-110 duration-300 cursor-pointer hover:border-blue-500 border-2"
                       />
                     </div>
-                    <div className="font-LexendDeca text-[18px]   mt-2">
+                    <div className="font-LexendDeca text-[18px] text-blue-500  mt-2">
                       {items.name}
                     </div>
                   </div>
@@ -45,7 +45,7 @@ const Section1 = () => {
       </div>
       <div className="d:hidden p:block ">
         <Swiper
-          slidesPerView={3}
+          slidesPerView={2}
           loop={true}
           autoplay={{
             delay: 2500,

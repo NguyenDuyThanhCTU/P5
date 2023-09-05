@@ -55,13 +55,13 @@ const Home = () => {
               ? `Kết quả tìm kiếm cho từ khoá '${searchKey}'`
               : "Sản phẩm mới"
           }`}
-          background="bg-[url(https://png.pngtree.com/background/20210710/original/pngtree-cartoon-kid-meadow-green-background-material-picture-image_1023073.jpg)]"
+          background="bg-[url(https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/img%2Fblue-1142745_960_720.jpg?alt=media&token=c3265f6b-5275-41d7-b739-6f94b65d8640)]"
         />
       </div>
       <Display
         Data={best}
         title=" Sản phẩm bán chạy"
-        background="bg-[url(https://i.pinimg.com/originals/5d/04/23/5d04238a61c7da84d144b241a8867cc9.jpg)]"
+        background="bg-[url(https://firebasestorage.googleapis.com/v0/b/dora-a85b2.appspot.com/o/img%2Fvecteezy_background-gradient-blue-abstract-design-vector-illustration_16513887.jpg?alt=media&token=0e41ca8a-89cb-4099-913a-ce8e0168324b)]"
       />
       <div
         className={`fixed bottom-36 right-[-300px] ${

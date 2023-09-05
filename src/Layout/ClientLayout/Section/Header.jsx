@@ -8,7 +8,7 @@ import { RxCross1 } from "react-icons/rx";
 import { HeaderItems } from "../../../Utils/item";
 import DropDown from "../Item/DropDown";
 import { useData } from "../../../Context/DataProviders";
-import { AiOutlineShoppingCart, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useStateProvider } from "../../../Context/StateProvider";
 
 const Header = () => {
@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <>
       {/* <--- Desktop ---> */}
-      <div className="font-LexendDeca  bg-MainColor  shadow-lg h-[90px] bg-white text-main">
+      <div className="font-LexendDeca  bg-MainColor  shadow-blue-300 shadow-lg h-[90px] bg-white text-main z-10">
         <div className="p:hidden d:block w-full h-full  ">
           <div className="flex px-20 w-full justify-between h-full">
             <div className="flex gap-24">
@@ -39,7 +39,7 @@ const Header = () => {
               </RouterLink>
             </div>
             <div className="flex items-center w-[35vw] ">
-              <div className="border flex items-center justify-between w-full rounded-sm text-black">
+              <div className="border flex items-center justify-between w-full rounded-sm text-black border-blue-600">
                 <input
                   type="text"
                   placeholder="Tìm kiếm sản phẩm..."
@@ -55,7 +55,7 @@ const Header = () => {
                 >
                   {" "}
                   <div
-                    className="p-2 bg-blue-500 w-[100px] cursor-pointer text-main hover:bg-blue-600 duration-300"
+                    className="p-2 bg-blue-500 w-[100px] cursor-pointer text-white hover:bg-blue-600 duration-300 text-center"
                     onClick={() => HandleSearch()}
                   >
                     Tìm kiếm
@@ -63,7 +63,7 @@ const Header = () => {
                 </ScrollLink>
               </div>
             </div>
-            <div className="flex items-center gap-4 text-[30px] cursor-pointer text-black">
+            <div className="flex items-center gap-4 text-[30px] cursor-pointer text-blue-700">
               <Link to="/thanh-toan">
                 <AiOutlineShoppingCart />
               </Link>
@@ -76,7 +76,7 @@ const Header = () => {
             <div className="py-2">
               <RouterLink to="/">
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/demo2512.appspot.com/o/z4523416705991_6351c6fb45a2952326e387f039a1c368.jpg?alt=media&token=e5e78444-f2ab-44cf-a88d-5964e1f96208"
+                  src={TradeMarkData.websiteLogo}
                   alt="logo"
                   className="w-14 object-cover"
                 />

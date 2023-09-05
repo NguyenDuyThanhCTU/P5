@@ -55,10 +55,10 @@ const Footer = () => {
   };
 
   return (
-    <div className="font-LexendDeca">
+    <div className="font-LexendDeca bg-gradient-to-tr from-blue-400 to-blue-500 text-white">
       <div className="grid d:grid-cols-3 p:p-10  d:p-16 gap-10 p:grid-cols-1">
         <div>
-          <h3 className="uppercase font-bold text-red-500 text-[18px]">
+          <h3 className="uppercase font-bold text-black text-[18px]">
             ĐĂNG KÍ NHẬN THÔNG TIN ƯU ĐÃI VÀ XU HƯỚNG MỚI NHẤT
           </h3>
           <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-4">
@@ -88,7 +88,7 @@ const Footer = () => {
             <div>
               <button
                 type="submit"
-                className="uppercase py-2 px-6 bg-blue-600 text-white"
+                className="uppercase py-2 px-6 bg-white text-blue-500 hover:scale-110 duration-300"
               >
                 gửi đi
               </button>
@@ -96,7 +96,7 @@ const Footer = () => {
           </form>
         </div>
         <div>
-          <h3 className="uppercase font-bold text-red-500 text-[25px]">
+          <h3 className="uppercase font-bold text-black text-[25px]">
             Thông tin liên hệ
           </h3>
           <div className="flex flex-col gap-2 mt-2">
@@ -120,7 +120,7 @@ const Footer = () => {
                 return (
                   <div
                     key={idx}
-                    className={`text-[15px] cursor-pointer border p-1 border-blue-600 text-blue-600 hover:scale-125 duration-300`}
+                    className={`text-[15px] cursor-pointer border p-1 border-white text-wborder-white hover:scale-125 duration-300`}
                   >
                     {Icon && (
                       <a href={`https://${Point} `} target="_blank">
@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <h3 className="uppercase font-bold text-red-500 text-[25px]">
+          <h3 className="uppercase font-bold text-black text-[25px]">
             Quy định và chính sách
           </h3>
           <div className="flex flex-col gap-2 mt-2">

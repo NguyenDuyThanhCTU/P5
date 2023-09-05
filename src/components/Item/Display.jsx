@@ -23,19 +23,19 @@ const Display = ({ Data, title, background }) => {
         <>
           {" "}
           <div>
-            <h3 className="text-center text-[28px] uppercase text-black font-semibold">
+            <h3 className="text-center text-[28px] uppercase text-white font-semibold">
               {title}
             </h3>
             <div className="grid d:grid-cols-4 p:grid-cols-2  d:grid-rows-3 p:grid-rows-6 gap-5 d:mx-20 mt-5 p:mx-2">
               {Data.map((items, idx) => (
                 <Link to={`/san-pham/${items.id}`}>
-                  <div className="border bg-white  hover:scale-105 duration-500 cursor-pointer">
+                  <div className="border bg-[rgba(255,255,255,0.88)] p:h-[405px] d:h-[550px]  cursor-pointer">
                     <div className="p-5 flex flex-col items-center gap-3">
-                      <div>
+                      <div className="d:h-[380px] p:h-[200px] flex items-center justify-center overflow-hidden">
                         <img
                           src={items.image}
                           alt="product"
-                          className="h-[380px]"
+                          className="w-full h-full hover:scale-105 duration-500"
                         />
                       </div>
                       <div className="flex flex-col items-center text-gray-600 font-semibold ">

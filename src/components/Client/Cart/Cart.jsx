@@ -144,7 +144,7 @@ const Cart = () => {
   // }, []);
 
   return (
-    <div className="grid d:grid-cols-2 gap-5 p:grid-cols-1 mt-5 mx-10 font-LexendDeca">
+    <div className="grid d:grid-cols-2 gap-5 p:grid-cols-1 mt-5 mx-10 font-LexendDeca py-14">
       <div className="border shadow-xl">
         <div className="p-2">
           <h3 className=" uppercase text-[24px] font-normail border-b w-full pb-2">

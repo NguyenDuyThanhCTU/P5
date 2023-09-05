@@ -29,8 +29,8 @@ const Section1 = ({ Data }) => {
 
   return (
     <div>
-      <div className="flex d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2">
-        <div className="border flex-1">
+      <div className="flex d:mx-16 gap-16 font-LexendDeca d:flex-row p:flex-col p:mx-2 py-14">
+        <div className="border-2 flex-1 border-blue-400 rounded-lg">
           <img
             src={Data.image}
             alt="product image"
@@ -136,12 +136,12 @@ const Section1 = ({ Data }) => {
               Mua ngay
             </div>
           </div>
-          <div className="bg-slate-200">
+          <div className="bg-gradient-to-t from-blue-400 to-blue-500 text-white">
             <div className="p-3 flex flex-col gap-3">
               {ProductDetailItems.map((items, idx) => (
                 <>
                   <div className="flex gap-5 items-center">
-                    <div className="rounded-full bg-orange-400 p-2 w-10 h-10 flex items-center justify-center">
+                    <div className="rounded-full bg-orange-700 p-2 w-10 h-10 flex items-center justify-center">
                       <span> {idx}</span>
                     </div>
                     <p>{items.name}</p>

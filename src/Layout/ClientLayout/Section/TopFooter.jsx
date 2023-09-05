@@ -65,7 +65,7 @@ const TopFooter = () => {
               <h3 className="text-title font-bold">
                 LỊCH SỬ HÌNH THÀNH VÀ PHÁT TRIỂN Hợp tác xã Ba khía Đầm Dơi
               </h3>
-              <p className="text-content">
+              <p className="text-content ">
                 <strong> Hợp tác xã ba khía Đầm Dơi</strong> qua nhiều giai đoạn
                 hình thành và phát triển với 07 năm kinh nghiệm. Nhiều sản phẩm
                 nỗi tiếng là ba khía trộn, ba khía trộn sẵn, ba khía muối nước
@@ -128,7 +128,7 @@ const TopFooter = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-4 bg-gradient-to-t to-green-300 text-white from-green-600">
+            <div className="mt-4 bg-gradient-to-t to-blue-300 text-white from-blue-600">
               <div className="p-4 grid grid-cols-2 gap-5 ">
                 {SloganItems.map((items, idx) => (
                   <>

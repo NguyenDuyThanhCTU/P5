@@ -25,7 +25,7 @@ const Category = () => {
   };
 
   return (
-    <div className="font-LexendDeca">
+    <div className="font-LexendDeca text-white">
       <h3 className="uppercase font-bold text-blue-500 text-[25px] text-center ">
         Danh mục
       </h3>
