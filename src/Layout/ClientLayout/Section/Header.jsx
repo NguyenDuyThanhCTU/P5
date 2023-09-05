@@ -1,119 +1,289 @@
-import React, { useState } from "react";
-
-import { Link as ScrollLink } from "react-scroll";
-import { Link, Link as RouterLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { HeaderItems } from "../../../Utils/item";
+import { Link } from "react-router-dom";
 import { MdOutlineFormatListBulleted } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
-
-import { HeaderItems } from "../../../Utils/item";
-import DropDown from "../Item/DropDown";
 import { useData } from "../../../Context/DataProviders";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import DropDown from "../Item/DropDown";
+import { AiFillCaretRight, AiOutlineSearch } from "react-icons/ai";
+
+import { BsCart3 } from "react-icons/bs";
+import { FiSearch } from "react-icons/fi";
 import { useStateProvider } from "../../../Context/StateProvider";
 
 const Header = () => {
+  const [isSelected, setIsSelected] = useState(0);
   const [Hidden, setHidden] = useState(false);
-  const [keywork, setKeywork] = useState();
-  const { TradeMarkData } = useData();
-  const { setSearchKey } = useStateProvider();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [elementTop, setElementTop] = useState(95);
+  const [IsTranslate, setTranslate] = useState(false);
+  const [Search, setSearch] = useState("");
+  const [isOpenSubMenu, setIsOpenSubMenu] = useState(0);
+  const targetPosition = 1;
+  const { TradeMarkData, productTypes, CartItems } = useData();
+  const { setOpenCart, OpenCart } = useStateProvider();
 
-  const HandleSearch = () => {
-    setSearchKey(keywork);
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset || document.documentElement.scrollTop;
+      setScrollPosition(position);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrollPosition > targetPosition) {
+      setElementTop(0);
+      setTranslate(true);
+    } else {
+      setElementTop(95);
+      setTranslate(false);
+    }
+  }, [scrollPosition]);
+
+  const HandleOpenSubMenu = (idx) => {
+    if (idx === isOpenSubMenu) {
+      setIsOpenSubMenu(0);
+    } else {
+      setIsOpenSubMenu(idx);
+    }
   };
 
   return (
-    <>
-      {/* <--- Desktop ---> */}
-      <div className="font-LexendDeca  bg-MainColor  shadow-blue-300 shadow-lg h-[90px] bg-white text-main z-10">
-        <div className="p:hidden d:block w-full h-full  ">
-          <div className="flex px-20 w-full justify-between h-full">
-            <div className="flex gap-24">
-              <RouterLink to="/">
-                <div className="cursor-pointer">
+    <div className="d:h-[126px] font-LexendDeca  p:h-auto shadow-lg shadow-blue-300 ">
+      <div className="bg-white ">
+        <div className="  h-full relative  bg-white ">
+          <div className=" w-full    text-[#1b365d] h-[92px] z-50 p:hidden d:flex justify-center">
+            <div className="flex justify-between first-letter: items-center w-[1100px] ">
+              <div className="flex items-center gap-10">
+                <Link to="/">
                   <img
                     src={TradeMarkData.websiteLogo}
-                    alt="logo"
-                    className="w-36"
+                    alt="img"
+                    className="w-[130px]"
                   />
+                </Link>
+                <div className=" text-[#2d94c4]">
+                  <div className="flex items-center flex-col">
+                    <h3 className="uppercase text-[22px] font-bold">
+                      {TradeMarkData.websiteName}
+                    </h3>
+                    <span className="text-redPrimmary">
+                      Uy tín - Chất lượng - Giá rẻ
+                    </span>
+                  </div>
                 </div>
-              </RouterLink>
-            </div>
-            <div className="flex items-center w-[35vw] ">
-              <div className="border flex items-center justify-between w-full rounded-sm text-black border-blue-600">
-                <input
-                  type="text"
-                  placeholder="Tìm kiếm sản phẩm..."
-                  className="p-2 w-full outline-none"
-                  value={keywork}
-                  onChange={(e) => setKeywork(e.target.value)}
-                />
-                <ScrollLink
-                  to="product"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                >
-                  {" "}
+              </div>
+
+              <div className="flex gap-20 items-center">
+                <div className="relative text-black group  cursor-pointer">
+                  <input
+                    type="text"
+                    onChange={(e) => setSearch(e.target.value)}
+                    className="p-2 px-4 outline-none rounded-full bg-white border-mainpink border w-[300px]"
+                  />
+                  <Link to={`/cua-hang/tim-kiem/${Search}`}>
+                    <FiSearch
+                      className={`${
+                        Search && "-right-10 bg-[#F67D08] text-white"
+                      } group-hover:bg-[#F67D08] group-hover:text-white inline-block bg-white w-[36px] h-[36px] p-2 font-bold rounded-full text-[#F67D08] absolute right-[4px] bottom-[3px] group-hover:-right-10  duration-300 hover:scale-110`}
+                    />
+                  </Link>
                   <div
-                    className="p-2 bg-blue-500 w-[100px] cursor-pointer text-white hover:bg-blue-600 duration-300 text-center"
-                    onClick={() => HandleSearch()}
+                    className={`${
+                      Search ? "-top-3 left-5  " : "top-2 left-4"
+                    } bg-white absolute   group-hover:-top-3 group-hover:left-5 px-2 duration-300`}
                   >
                     Tìm kiếm
                   </div>
-                </ScrollLink>
+                </div>
+
+                <div
+                  className="text-[24px] relative cursor-pointer"
+                  onClick={() => setOpenCart(!OpenCart)}
+                >
+                  <div>
+                    <BsCart3 />
+                  </div>
+                  <div className="text-redPrimmary rounded-full bg-white text-[14px]  absolute -bottom-2 -right-2 flex items-center justify-center border w-5 h-5">
+                    <span> {CartItems.length}</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="flex items-center gap-4 text-[30px] cursor-pointer text-blue-700">
-              <Link to="/thanh-toan">
-                <AiOutlineShoppingCart />
-              </Link>
-            </div>
           </div>
-        </div>
 
-        <div className="p:block d:hidden ">
-          <div className="justify-between mx-5 flex items-center">
-            <div className="py-2">
-              <RouterLink to="/">
+          <div className="p:block d:hidden w-full  ">
+            <div className="flex justify-between  items-center ">
+              <Link to="/">
                 <img
                   src={TradeMarkData.websiteLogo}
                   alt="logo"
-                  className="w-14 object-cover"
+                  className="h-[50px] m-5 "
                 />
-              </RouterLink>
-            </div>
-            <div>
-              <div className="flex items-center text-[65px]">
+              </Link>
+              <div className="flex items-center text-[60px]">
                 {Hidden ? (
                   <RxCross1
-                    className=" text-main p-2 "
+                    className="bg-redPrimmary text-white p-2 "
                     onClick={() => setHidden(!Hidden)}
                   />
                 ) : (
                   <MdOutlineFormatListBulleted
-                    className=" text-main p-2 "
+                    className="bg-redPrimmary text-white p-2 "
                     onClick={() => setHidden(!Hidden)}
                   />
                 )}
               </div>
             </div>
+            <div
+              className={`${
+                Hidden ? "h-screen" : "h-0 "
+              } w-full duration-700 bg-[rgba(253,253,253,0.9)] overflow-y-scroll`}
+            >
+              {HeaderItems.map((items, idx) => {
+                const sort = productTypes.filter(
+                  (item) => item.parentParams === items.link
+                );
+
+                return (
+                  <DropDown
+                    idx={idx}
+                    dropdown={sort}
+                    content={items.name}
+                    link={items.link}
+                    setHidden={setHidden}
+                  />
+                );
+              })}
+            </div>
           </div>
-          <div
-            className={`${
-              Hidden ? "h-screen" : "h-0 "
-            } w-full duration-700 bg-[rgba(253,253,253,0.9)] overflow-hidden `}
-          >
-            {HeaderItems.map((items) => (
-              <DropDown
-                content={items.name}
-                link={items.link}
-                setHidden={setHidden}
-              />
-            ))}
+
+          <div className="d:flex flex-col p:hidden w-full  items-center">
+            <div
+              className={`fixed z-10 ${
+                IsTranslate
+                  ? `w-full bg-white text-black shadow-lg shadow-blue-300`
+                  : " w-[1600px] bg-gradient-to-br from-blue-400 to-blue-600 text-white  "
+              }   duration-300 h-[69px] rounded-lg flex justify-center px-5  items-center text-normal font-semibold gap-16`}
+              style={{ top: `${elementTop}px` }}
+            >
+              {HeaderItems.map((items, idx) => {
+                const sort = productTypes.filter(
+                  (item) => item.parentParams === items.link
+                );
+
+                return (
+                  <div className="relative" key={idx}>
+                    <Link
+                      to={`${
+                        items.params ? `/${items.params}` : `/${items.link}`
+                      }`}
+                    >
+                      <div className="group/main">
+                        <div
+                          className={`uppercase text-[18px] flex items-center justify-between  gap-2  hover:text-mainpink duration-500  ${
+                            IsTranslate
+                              ? ` ${
+                                  isSelected === idx
+                                    ? "text-mainpink"
+                                    : "text-black"
+                                }`
+                              : `text-white`
+                          }
+  
+                         `}
+                          onClick={() => {
+                            setIsSelected(idx);
+                          }}
+                        >
+                          <p> {items.name}</p>
+                          {sort.length > 0 && (
+                            <AiFillCaretRight className="group-hover/main:rotate-90 duration-500" />
+                          )}
+                        </div>
+
+                        {/*  */}
+                        {sort.length > 0 && (
+                          <div className="group-hover/main:block hidden relative z-20">
+                            <div className="absolute h-10 w-full bg-none"></div>
+                            <div className="  absolute  mt-5 w-[340px] max-h-[300px]  shadow-xl rounded-b-lg bg-white  overflow-y-auto overflow-x-visible">
+                              {sort.map((items, idx) => (
+                                <div className="">
+                                  <div className="w-full">
+                                    <div
+                                      className="py-4 px-8 font-light text-black group duration-300 hover:text-white hover:bg-mainpink flex justify-between items-center w-full"
+                                      onClick={() => HandleOpenSubMenu(idx + 1)}
+                                    >
+                                      <Link
+                                        to={`${
+                                          items.parent === "album-anh"
+                                            ? `/album-anh/${items.params}`
+                                            : `/loai-san-pham/${items.params}`
+                                        }`}
+                                      >
+                                        <span>{items.name}</span>
+                                      </Link>
+                                      {items.children.length > 0 && (
+                                        <AiFillCaretRight
+                                          className={`${
+                                            isOpenSubMenu === idx + 1 &&
+                                            "rotate-90"
+                                          } duration-500 text-black`}
+                                        />
+                                      )}
+                                    </div>
+                                    <div
+                                      className={`${
+                                        isOpenSubMenu === idx + 1
+                                          ? " h-max"
+                                          : " h-0"
+                                      } overflow-hidden duration-500  block`}
+                                    >
+                                      {items.children.length > 0 && (
+                                        <>
+                                          {items.children.map((items) => (
+                                            <Link
+                                              to={`/loai-san-pham/${items.params}`}
+                                            >
+                                              <div className="py-4 px-8 pl-14 font-light duration-300 text-mainblue hover:text-white hover:bg-mainblue cursor-pointer">
+                                                {items.name}
+                                              </div>
+                                            </Link>
+                                          ))}
+                                        </>
+                                      )}
+                                    </div>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {/*  */}
+                      </div>
+                    </Link>
+                    <div
+                      className={` ${
+                        isSelected === idx
+                          ? IsTranslate
+                            ? "w-full bg-mainpink"
+                            : "w-full bg-white"
+                          : "w-0"
+                      }  duration-500 h-2 rounded-3xl absolute -bottom-[23px]`}
+                    ></div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
