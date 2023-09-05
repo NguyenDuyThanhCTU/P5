@@ -3,34 +3,28 @@ import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { ProductDetailItems } from "../../../../Utils/item";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import { useData } from "../../../../Context/DataProviders";
+import { useNavigate } from "react-router-dom";
+import { useStateProvider } from "../../../../Context/StateProvider";
 
 const Section1 = ({ Data }) => {
   const [isCombo, setIsCombo] = useState(1);
-  const { ContactData } = useData();
+  const { ContactData, setCartItems, CartItems } = useData();
+  const { setOpenCart } = useStateProvider();
+  const navigate = useNavigate();
   const onMinus = () => {
     if (isCombo > 0) {
       setIsCombo(isCombo - 1);
     }
   };
 
-  const DataFetch = {
-    name: "Ba khía ba can",
-    price: "320 000",
-    image:
-      "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/334092632_573098178103439_6639006136047838964_n.jpg?_nc_cat=105&cb=99be929b-3346023f&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=PmuCKkVfvR4AX89z6sy&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfC0vorlNoy_IYSZoWwFYOCYNgNM7OHXaWnSRJtOOvu2IQ&oe=64CF6335",
-    state: true,
-    material: "đang cập nhật",
-    color: "đang cập nhật",
-    size: "đang cập nhật",
-    ingredient: "đang cập nhật",
-    sold: 28,
-    sale: { newprice: "160 000", percent: "50" },
-    evaluate: 5,
-    type: "",
-    typeName: "",
-    childrenType: "",
-    childrenTypeName: "",
-    createdAt: "July 30, 2023 at 3:42:52 PM UTC+7",
+  const HandleOrder = (id, type) => {
+    if (type === "buy") {
+      setCartItems((prevItems) => [...prevItems, id]);
+      navigate("/thanh-toan");
+    } else {
+      setCartItems((prevItems) => [...prevItems, ...Array(isCombo).fill(id)]);
+      setOpenCart(true);
+    }
   };
 
   return (
@@ -129,10 +123,16 @@ const Section1 = ({ Data }) => {
           </div>
 
           <div className="flex gap-5">
-            <div className="p-3 bg-blue-500 text-white hover:bg-blue-600 rounded-sm cursor-pointer">
+            <div
+              className="p-3 bg-blue-500 text-white hover:bg-blue-600 rounded-sm cursor-pointer"
+              onClick={() => HandleOrder(Data.id, "add")}
+            >
               Thêm vào giỏ hàng
             </div>
-            <div className="p-3 bg-orange-500 text-white hover:bg-orange-600 rounded-sm cursor-pointer">
+            <div
+              className="p-3 bg-orange-500 text-white hover:bg-orange-600 rounded-sm cursor-pointer"
+              onClick={() => HandleOrder(Data.id, "buy")}
+            >
               Mua ngay
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { Input, notification } from "antd";
 import React, { useState } from "react";
 import { useData } from "../../../Context/DataProviders";
+import { IconMapping, SocialMediaCustom } from "../../../Utils/item";
 
 const Footer = () => {
   const { TradeMarkData, ContactData, SocialMedia } = useData();
@@ -105,20 +106,31 @@ const Footer = () => {
             <p>
               <strong>Hotline:</strong> {ContactData.phone}
             </p>
+
             <p>
-              <strong>Zalo:</strong> {}
+              <strong>Email:</strong> {ContactData.gmail}
             </p>
-            <p>
-              <strong>Email:</strong> {ContactData.email}
-            </p>
-            <p>
-              <strong>Fanpage:</strong>
-              {SocialMedia[2]}
-            </p>
-            <p>
-              <strong>Youtube:</strong>
-              {SocialMedia[7]}
-            </p>
+            <div>
+              <strong>Kênh truyền thông:</strong>
+            </div>
+            <div className="flex gap-3">
+              {SocialMediaCustom.map((items, idx) => {
+                let Icon = IconMapping[items.icon];
+                let Point = SocialMedia[items.id];
+                return (
+                  <div
+                    key={idx}
+                    className={`text-[15px] cursor-pointer border p-1 border-blue-600 text-blue-600 hover:scale-125 duration-300`}
+                  >
+                    {Icon && (
+                      <a href={`https://${Point} `} target="_blank">
+                        <Icon />
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div>
@@ -126,11 +138,21 @@ const Footer = () => {
             Quy định và chính sách
           </h3>
           <div className="flex flex-col gap-2 mt-2">
-            <p>Chính sách vận chuyển</p>
-            <p>Chính sách bảo hành và đổi trả</p>
-            <p>Hướng dẫn thanh toán</p>
-            <p>Điều khoản sử dụng website</p>
-            <p>An toàn và bảo mật thông tin</p>
+            <p className="cursor-pointer hover:underline">
+              Chính sách vận chuyển
+            </p>
+            <p className="cursor-pointer hover:underline">
+              Chính sách bảo hành và đổi trả
+            </p>
+            <p className="cursor-pointer hover:underline">
+              Hướng dẫn thanh toán
+            </p>
+            <p className="cursor-pointer hover:underline">
+              Điều khoản sử dụng website
+            </p>
+            <p className="cursor-pointer hover:underline">
+              An toàn và bảo mật thông tin
+            </p>
           </div>
         </div>
       </div>

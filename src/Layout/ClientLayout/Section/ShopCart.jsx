@@ -11,10 +11,9 @@ const ShopCart = () => {
   const { CartItems, Products, setCartItems } = useData();
 
   const cartMap = {};
-  const listColor = [];
+
   CartItems.forEach((itemId) => {
-    cartMap[itemId.id] = (cartMap[itemId.id] || 0) + 1;
-    listColor.push(itemId.color);
+    cartMap[itemId] = (cartMap[itemId] || 0) + 1;
   });
 
   const cartProducts = [];
@@ -31,7 +30,6 @@ const ShopCart = () => {
         ...product,
         count: itemCount,
         total: itemTotal,
-        ListColor: listColor,
       });
     }
   });
@@ -92,15 +90,8 @@ const ShopCart = () => {
                     <div className="flex flex-col text-start ">
                       <h3 className="   w-full">{product.title}</h3>
                       <p className="italic text-[14px] text-gray-500">
-                        Mã màu:
+                        Khối lượng: {product.weight}
                       </p>
-                      <div className="w-full grid grid-cols-5 gap-2 grid-row-2">
-                        {product.ListColor.map((items, idx) => (
-                          <>
-                            <p>{items}</p>
-                          </>
-                        ))}
-                      </div>
                     </div>
                   </div>
                   <div>
@@ -137,8 +128,8 @@ const ShopCart = () => {
                     {totalAmount.toFixed(3)} <sup>VNĐ</sup>
                   </span>
                 </div>
-                <Link to={"/gio-hang"}>
-                  <div className="px-4 bg-mainblue py-1 text-white cursor-pointer">
+                <Link to={"/thanh-toan"}>
+                  <div className="px-4 bg-main py-1 text-white cursor-pointer">
                     Đặt hàng
                   </div>
                 </Link>

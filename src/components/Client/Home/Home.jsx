@@ -36,6 +36,13 @@ const Home = () => {
     setBest(sortedByAccess);
   }, [Products, searchKey]);
 
+  useEffect(() => {
+    const sort = Products.filter((items) => items.type === searchKey);
+    if (sort) {
+      setLatest(sort);
+    }
+  }, [searchKey]);
+
   return (
     <div>
       <Section1 />

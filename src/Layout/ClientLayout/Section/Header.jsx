@@ -16,9 +16,11 @@ const Header = () => {
   const [keywork, setKeywork] = useState();
   const { TradeMarkData } = useData();
   const { setSearchKey } = useStateProvider();
+
   const HandleSearch = () => {
     setSearchKey(keywork);
   };
+
   return (
     <>
       {/* <--- Desktop ---> */}

@@ -21,7 +21,7 @@ const Cart = () => {
   const cartMap = {};
 
   CartItems?.forEach((itemId) => {
-    cartMap[itemId.id] = (cartMap[itemId.id] || 0) + 1;
+    cartMap[itemId] = (cartMap[itemId] || 0) + 1;
   });
 
   const cartProducts = [];
@@ -29,10 +29,8 @@ const Cart = () => {
   let FinalCount = 0;
   Object.keys(cartMap).forEach((itemId) => {
     const product = Products.find((product) => product.id === itemId);
-    const listcolor = CartItems.filter((items) => items.id === itemId);
-    const colors = listcolor.map((item) => item.color);
 
-    if (product && colors) {
+    if (product) {
       const itemCount = cartMap[itemId];
       const itemTotal = product.price * itemCount;
 
@@ -42,7 +40,6 @@ const Cart = () => {
         ...product,
         count: itemCount,
         total: itemTotal,
-        ListColor: colors,
       });
     }
   });
@@ -87,7 +84,7 @@ const Cart = () => {
           title: "Chi tiết hóa đơn",
           value: `${cartProducts
             .map((items, idx) => {
-              return `----------------------------------------------- Sản phẩm ${idx} ------------------------------------------------- \nTên sản phẩm: ${items.title} \n số lượng: ${items.count} \n mã sản phẩm: ${items.ListColor} \n loại: ${items.type} \n Giá: ${items.price} VNĐ \n `;
+              return `----------------------------------------------- Sản phẩm ${idx} ------------------------------------------------- \nTên sản phẩm: ${items.title} \n số lượng: ${items.count}  \n loại: ${items.type} \n Giá: ${items.price} VNĐ \n `;
             })
             .join("")}
         `,
@@ -134,17 +131,17 @@ const Cart = () => {
     }
   };
 
-  useEffect(() => {
-    const data = {
-      name: "",
-      color: [],
-    };
-    cartProducts.map((items, idx) => {
-      data.color.push(items.ListColor);
-      data.name = items.title;
-    });
-    // console.log(data);
-  }, []);
+  // useEffect(() => {
+  //   const data = {
+  //     name: "",
+  //     color: [],
+  //   };
+  //   cartProducts.map((items, idx) => {
+  //     data.color.push(items.ListColor);
+  //     data.name = items.title;
+  //   });
+
+  // }, []);
 
   return (
     <div className="grid d:grid-cols-2 gap-5 p:grid-cols-1 mt-5 mx-10 font-LexendDeca">
@@ -173,14 +170,6 @@ const Cart = () => {
                     </div>
                     <div className="flex flex-col text-start ">
                       <h3 className="   w-full">{product.title}</h3>
-
-                      <div className="w-full flex gap-2">
-                        {product.ListColor.map((items, idx) => (
-                          <>
-                            <p>{items}</p>
-                          </>
-                        ))}
-                      </div>
                     </div>
                   </div>
                   <p className="w-full text-right">

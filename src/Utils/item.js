@@ -194,15 +194,6 @@ export const SocialMediaCustom = [
     image: "https://images.alphacoders.com/112/1123670.png",
     style: "hover:bg-black hover:text-white p-1",
   },
-
-  {
-    id: 7,
-    title: "Trang YouTube",
-    icon: "BsYoutube",
-    image:
-      "https://img.nhandan.com.vn/Files/Images/2021/04/13/3A708284_F5B8_407D_ADC0_339DBEE-1618275907021.jpeg",
-    style: "hover:bg-red-600 hover:text-white p-1",
-  },
 ];
 
 export const ProductOptionItems = [
